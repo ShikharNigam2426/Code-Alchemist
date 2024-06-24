@@ -1,0 +1,32 @@
+@media only screen and (max-width: 991px) {
+
+    /* navbar Search icon  */
+    
+
+    /* Styles for phones */
+    .hero-text {
+        background-position: right;
+        color: white !important;
+    }
+
+    .hero-text>h1 {
+        font-weight: 700 !important;
+        font-size: 9vw !important;
+    }
+
+    .feature-card {
+        margin: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1483px) {
+
+    /* navbar search icon ki width  */
+    
+    .search-box:hover input,
+    .input.focused {
+        width: 200px;
+        background: #ffffff;
+        border-radius: 20px;
+    }
+}
