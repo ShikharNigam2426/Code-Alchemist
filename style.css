@@ -4,6 +4,14 @@ body {
     overflow-x: hidden;
 }
 
+.big-navbar{
+    display: none;
+}
+
+.container{
+    padding: 0rem 6rem;
+}
+
 .navbar{
     position: sticky;
     top: 0;
@@ -36,8 +44,11 @@ li {
     width: 80px;
 }
 
+
 .search-box {
     position: relative;
+    transition: width 0.3s ease;
+    margin-left: auto; /* Align to the left side */
 }
 
 .searchRow {
@@ -50,7 +61,7 @@ li {
     width: 40px;
     height: 40px;
     background: none;
-    border: 3px solid #6c6c6c;
+    border: 2px solid #252525;
     border-radius: 50%;
     box-sizing: border-box;
     font-family: Comic Sans MS;
@@ -62,8 +73,9 @@ li {
 
 .search-box:hover input,
 .input.focused {
-    width: 300px;
-    background: #ffffff;
+    width: 200px;
+    background: #dadadaa7;
+    color: rgb(53, 52, 52);
     border-radius: 20px;
 }
 
@@ -76,6 +88,12 @@ li {
     color: #000000;
     transition: .2s;
 }
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
 
 .search-box:hover i,
 .input.focused + .icon {
@@ -153,6 +171,7 @@ li {
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
+    /* height: 92vh; */
 }
 
 .feature-card-column{
@@ -183,10 +202,8 @@ li {
 
 .feature-card-row{
     height: -webkit-fill-available;
-    /* margin-top: 5.3vmax !important; */
     margin: auto;
     margin-top: 6vmax;
-    /* align-items: revert-layer; */
     justify-content: center;
     padding: auto 10px !important;
 }
@@ -204,12 +221,23 @@ li {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.feature-card-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .feature-card-image img {
     max-width: 100%;
-    height: auto;
+    height: 21vw !important;
     display: block;
     margin-bottom: 10px;
     border-radius: 4px; /* Rounded corners for the image */
+    object-fit: fill;
+}
+
+.feature-card-heading{
+    padding-top: 10px 0px 0px 0px ;
 }
 
 .feature-card-heading h2 {
@@ -227,4 +255,14 @@ li {
 
 .feature-card-heading > h1{
     font-size: 1.5rem;
+}
+
+/* feamale product ki css  */
+
+.female-heading{
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    font-size: 5vw;
+    display: inline-block;
+    margin-right: 1rem;
 }
