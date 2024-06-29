@@ -1,11 +1,12 @@
 @media only screen and (max-width: 991px) {
 
     /* navbar Search icon  */
-    .phone-navbar{
+    .phone-navbar {
         display: none !important;
         visibility: hidden !important;
     }
-    .big-navbar{
+
+    .big-navbar {
         display: block;
     }
 
@@ -20,8 +21,33 @@
         font-size: 9vw !important;
     }
 
+    .feature-card-heading>h1 {
+        font-size: 1rem !important;
+    }
+
+    .female-heading {
+        font-size: 8vw;
+    }
+
+    .male-heading {
+        font-size: 9vw;
+    }
+
     .feature-card {
-        margin: 2rem;
+        margin: 0rem;
+    }
+
+    .footer-row-1 {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    .footer-newsletter {
+        display: none;
+    }
+
+    .footer-ul{
+        font-size: 0.7rem !important;
     }
 }
 
@@ -29,16 +55,7 @@
 
     /* navbar search icon ki width  */
 
-    .footer-row-1{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .footer-newsletter{
-        display: none;
-    }
-    
-    .container{
+    .container {
         padding: 0rem 1rem;
     }
 
