@@ -22,6 +22,30 @@ const femaleProducts = [
         img2: "./images/women-col/gray-col-mol.jpeg",
         description: "Dress with Flared Skirt",
         price: "Rs.4,000"
+    },
+    {
+        img1: "https://imgs.search.brave.com/C0nksxqDqVTP9CR84b1hBC4iZGSoQZUDKt5ij7sRtVU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzEtb3B1ZVVUTUwu/anBn",
+        img2: "./images/women-col/gray-col-mol.jpeg",
+        description: "Dress with Flared Skirt",
+        price: "Rs.4,000.00"
+    },
+    {
+        img1: "https://imgs.search.brave.com/C0nksxqDqVTP9CR84b1hBC4iZGSoQZUDKt5ij7sRtVU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzEtb3B1ZVVUTUwu/anBn",
+        img2: "./images/women-col/gray-col-mol.jpeg",
+        description: "Dress with Flared Skirt",
+        price: "Rs.4,000.00"
+    },
+    {
+        img1: "https://imgs.search.brave.com/C0nksxqDqVTP9CR84b1hBC4iZGSoQZUDKt5ij7sRtVU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzEtb3B1ZVVUTUwu/anBn",
+        img2: "./images/women-col/gray-col-mol.jpeg",
+        description: "Dress with Flared Skirt",
+        price: "Rs.4,000.00"
+    },
+    {
+        img1: "https://imgs.search.brave.com/C0nksxqDqVTP9CR84b1hBC4iZGSoQZUDKt5ij7sRtVU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzEtb3B1ZVVUTUwu/anBn",
+        img2: "./images/women-col/gray-col-mol.jpeg",
+        description: "Dress with Flared Skirt",
+        price: "Rs.4,000.00"
     }
 ];
 
@@ -52,43 +76,12 @@ const maleProducts = [
 ];
 
 const femaleProductSection = document.getElementsByClassName('female-product')[0];
-
-const femaleContainer = femaleProducts.map((product) => {
-    return `
-        <div class="col-lg-3 col-md-6 py-2 col-sm-6 col-6 feature-card-column">
-            <div class="box feature-card">
-                <div class="feature-card-image">
-                    <img class="px-1 py-1" src="${product.img1}" alt="Feature Image" />
-                </div>
-                <div class="feature-card-content pb-2">
-                    <p class="grey">${product.description}</p>
-                </div>
-                <hr class="rule" />
-                <div class="feature-card-heading pt-3">
-                    <h1 class="grey">${product.price}</h1>
-                </div>
-            </div>
-        </div>
-    `;
-}).join('');
-
-femaleProductSection.innerHTML = femaleContainer;
+const maleProductSection = document.getElementsByClassName('male-product')[0];
 
 let femaleProductCount = 8;
 
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 991) {
-        femaleProductCount = 4;
-    }
-    else {
-        femaleContainer = 8;
-    }
-})
-
-const maleProductSection = document.getElementsByClassName('male-product')[0];
-
-const maleContainer = maleProducts.map((product, index) => {
-    if (index < femaleProductCount) {
+const renderProducts = () => {
+    let femaleContainer = femaleProducts.slice(0, femaleProductCount).map((product) => {
         return `
             <div class="col-lg-3 col-md-6 py-2 col-sm-6 col-6 feature-card-column">
                 <div class="box feature-card">
@@ -105,9 +98,41 @@ const maleContainer = maleProducts.map((product, index) => {
                 </div>
             </div>
         `;
-    } else {
-        return '';
-    }
-}).join('');
+    }).join('');
 
-maleProductSection.innerHTML = maleContainer;
+    femaleProductSection.innerHTML = femaleContainer;
+
+    let maleContainer = maleProducts.map((product) => {
+        return `
+            <div class="col-lg-3 col-md-6 py-2 col-sm-6 col-6 feature-card-column">
+                <div class="box feature-card">
+                    <div class="feature-card-image">
+                        <img class="px-1 py-1" src="${product.img1}" alt="Feature Image" />
+                    </div>
+                    <div class="feature-card-content pb-2">
+                        <p class="grey">${product.description}</p>
+                    </div>
+                    <hr class="rule" />
+                    <div class="feature-card-heading pt-3">
+                        <h1 class="grey">${product.price}</h1>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    maleProductSection.innerHTML = maleContainer;
+};
+
+window.addEventListener('resize', () => {
+    console.log('Changing size of female product');
+    if (window.innerWidth <= 991) {
+        femaleProductCount = 4;
+    } else {
+        femaleProductCount = 8;
+    }
+    renderProducts();
+});
+
+// Initial render
+renderProducts();
