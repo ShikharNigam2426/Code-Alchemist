@@ -12,6 +12,20 @@ body {
     padding: 0rem 6rem;
 }
 
+::-webkit-scrollbar{
+    width: 15px; 
+  }
+  ::-webkit-scrollbar-track{
+    background: transparent ; 
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    
+    background: red;
+    
+    border-bottom: 5px;
+  }
+
 .navbar{
     position: sticky;
     top: 0;
